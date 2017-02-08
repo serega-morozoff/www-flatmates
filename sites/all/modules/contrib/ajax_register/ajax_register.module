@@ -1,0 +1,170 @@
+<?php 
+
+/**
+ * Implementation of hook_menu()
+ */
+function ajax_register_menu() {
+  $items = array();
+  
+  $items['ajax_register/password'] = array(
+    'title' => 'Request new password',
+    'page callback' => 'ajax_register_password_form',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+    'file' => 'ajax_register.pages.inc',
+  );
+  
+  $items['ajax_register/login'] = array(
+    'title' => 'User login',
+    'page callback' => 'ajax_register_login_form',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+    'file' => 'ajax_register.pages.inc',
+  );
+  
+  $items['ajax_register/user_login'] = array(
+    'title' => 'Ajax user login',
+    'page callback' => 'ajax_register_login_ajax_callback',
+    'access callback' => 'user_is_anonymous',
+    'type' => MENU_CALLBACK,
+    'file' => 'ajax_register.pages.inc',
+    'delivery callback' => 'ajax_deliver',
+    'theme callback' => 'ajax_base_page_theme',
+  );
+  
+  $items['ajax_register/request_password'] = array(
+    'title' => 'Request password Ajax',
+    'page callback' => 'ajax_register_request_password_ajax_callback',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+    'file' => 'ajax_register.pages.inc',
+    'delivery callback' => 'ajax_deliver',
+    'theme callback' => 'ajax_base_page_theme',
+  );
+  
+  return $items;
+}
+
+/**
+ * Implementation of hook_theme()
+ */
+function ajax_register_theme() {
+  return array();
+  /*
+  return array(
+    'ajax_register_login_block_form' => array(
+      'render element' => 'form',
+      'template' => 'templates/ajax_register-login-block-form',
+    ),
+    'ajax_register_user_pass' => array(
+      'render element' => 'form',
+      'template' => 'templates/ajax_register-user-pass',
+    ),
+  );
+  */
+}
+
+/**
+ * Custom Functions 
+ */
+function ajax_register_form_alter(&$form, &$form_state, $form_id) {
+  switch ($form_id) {
+    case 'user_login_block':
+      
+      // @TODO: convert user/register link ajax enabled
+      if (variable_get('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL)) {
+        $items[] = l(t('Create new account'), 'user/register', array('attributes' => array('title' => t('Create a new user account.'))));
+      }
+      
+      $request_password_link = array(
+        '#type' => 'link',
+        '#title' => t('Request new password'),
+        '#href' => 'ajax_register/password/nojs/',
+        '#id' => 'ajax_link',
+        '#attributes' => array(
+          'class' => array('use-ajax'),
+          'title' => t('Request new password via e-mail.')
+        ),
+      );
+      
+      $items[] = render($request_password_link);
+      
+      $form['links'] = array('#theme' => 'item_list', '#items' => $items);
+      
+    case 'user_login':
+      $form['errors'] = array('#markup' => '<div id="ajax_register-error"></div>');
+      $form['#attached']['js'][] = drupal_get_path('module', 'ajax_register') . '/js/ajax_register.js';
+      $form['#attached']['library'][] = array('system', 'drupal.ajax');
+      
+      $form['actions']['submit']['#ajax']['path'] = 'ajax_register/user_login';
+      
+      break;
+  }
+}
+
+/**
+ * Custom login form
+ */
+function ajax_register_login_block_form($form, &$form_state) { 
+  $form['errors'] = array('#markup' => '<div id="ajax_register-error"></div>');
+  
+  $form['#attached'] = array(
+    'js' => array(drupal_get_path('module', 'ajax_register') . '/js/ajax_register.js'),
+  );
+  
+  $form['#action'] = url($_GET['q'], array('query' => drupal_get_destination()));
+  
+  $form['#id'] = 'ajax_register-login-form';
+  
+  $form['#validate'] = user_login_default_validators();
+  
+  $form['#submit'][] = 'user_login_submit';
+  
+  $form['name'] = array('#type' => 'textfield',
+    '#title' => t('Username'),
+    '#maxlength' => USERNAME_MAX_LENGTH,
+    '#size' => 15,
+    '#required' => TRUE,
+  );
+  
+  $form['pass'] = array('#type' => 'password',
+    '#title' => t('Password'),
+    '#maxlength' => 60,
+    '#size' => 15,
+    '#required' => TRUE,
+  );
+  
+  $form['actions'] = array('#type' => 'actions');
+  
+  $form['actions']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Log in'),
+    '#ajax' => array(
+      'path' => 'ajax_register/user_login',
+    ),
+  );
+
+  $form['request_password'] = array(
+    '#type' => 'link',
+    '#title' => t('Request new password'),
+    '#href' => 'ajax_register/password/nojs/',
+    '#id' => 'ajax_link',
+    '#attributes' => array(
+      'class' => array('use-ajax'),
+    ),
+  );
+ 
+  
+  if ((empty($_GET['destination']) || (!empty($_GET['destination']) && ($_GET['destination'] != 'fbconnect/link'))) && facebook_client()) {
+    $attr = array('scope' => 'email');
+    $form['fbconnect_button'] = array(
+      '#type' => 'item',
+      '#title' => t('Sign in using Facebook'),
+      '#markup' => fbconnect_render_button($attr),
+      '#weight' => 1,
+      '#id' => 'fbconnect_button',
+    );
+  }
+  
+  return $form;
+}

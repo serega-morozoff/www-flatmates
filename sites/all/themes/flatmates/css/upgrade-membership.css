@@ -1,0 +1,225 @@
+.labels  .views-field{
+	font-size: 13px;
+}
+.view-upgrade-membership .views-field{
+	text-align: center;
+	color: #466369;
+	font-weight: 400;
+	height: 30px;
+}
+.view-upgrade-membership .views-field img{
+	margin: 0 auto;
+}
+.view-upgrade-membership .views-field-title{
+	font-size: 18px;
+	font-weight: 700;
+}
+.view-upgrade-membership .labels,
+.view-upgrade-membership .views-view-grid td{
+	width: 20%;
+
+}
+.view-upgrade-membership .labels{
+	padding-left: 0;
+	padding-right: 0;
+	float: left;
+}
+.view-upgrade-membership .views-view-grid td .views-field {
+	padding-left: 15px;
+	padding-right: 15px;	
+}
+.view-upgrade-membership  .views-field-field-send-messages-to-paid-memb,
+.view-upgrade-membership  .views-field-field-receive-messages-from-paid,
+.view-upgrade-membership  .views-field-field-access-mobile-number-of-pa,
+.view-upgrade-membership  .views-field-field-anyone-can-access-social-m,
+.view-upgrade-membership  .views-field-field-send-messages-to-paid-img,
+.view-upgrade-membership  .views-field-field-receive-messages-img,
+.view-upgrade-membership  .views-field-field-access-mobile-number-img,
+.view-upgrade-membership  .views-field-field-anyone-can-access-img,
+.view-upgrade-membership  .views-field-field-price-display
+{
+	height: 50px;
+}
+.view-upgrade-membership  .views-field-field-benefits{
+	height: 70px;	
+}
+.views-field.views-field-field-create-lists-ico .field-content,
+.views-field.views-field-field-browser-all-lists-img .field-content,
+.views-field.views-field-field-upload-photos-per-list .field-content{
+	height: 30px;
+	display: table-cell;
+	vertical-align: middle;
+	width: 234px;	
+}
+.view-upgrade-membership  .views-field-field-send-messages-to-paid-memb .field-content,
+.view-upgrade-membership  .views-field-field-receive-messages-from-paid .field-content,
+.view-upgrade-membership  .views-field-field-access-mobile-number-of-pa .field-content,
+.view-upgrade-membership  .views-field-field-anyone-can-access-social-m .field-content,
+.view-upgrade-membership  .views-field-field-send-messages-to-paid-img .field-content,
+.view-upgrade-membership  .views-field-field-receive-messages-img .field-content,
+.view-upgrade-membership  .views-field-field-access-mobile-number-img .field-content,
+.view-upgrade-membership  .views-field-field-anyone-can-access-img .field-content,
+.view-upgrade-membership  .views-field-field-price-display .field-content,
+.view-upgrade-membership  .views-field-field-benefits .field-content{
+	display: table-cell;
+	vertical-align: middle;
+	width: 234px;
+	height: 50px;
+}
+.view-upgrade-membership  .views-field-field-benefits .field-content{
+	height: 70px;
+}
+.col-last .views-field.views-field-field-benefits,
+.col-last .views-field.views-field-field-upload-photos-per-list{
+	text-indent: -9999px;
+}
+.views-field.views-field-field-create-lists,
+.views-field.views-field-field-create-lists-ico,
+.views-field.views-field-field-send-messages-to-paid-memb,
+.views-field.views-field-field-send-messages-to-paid-img,
+.views-field.views-field-field-access-mobile-number-of-pa,
+.views-field.views-field-field-access-mobile-number-img,
+.views-field.views-field-field-price-display,
+.views-field.views-field-field-price-display,
+.views-field.views-field-field-upload-photos-per-list,
+.views-field.views-field-field-upload-photos-per-list{
+	background: #f7f8f9;
+}
+.views-field.views-field-field-create-lists .field-content,
+.views-field.views-field-field-browser-all-lists .field-content{
+	height: 30px;
+}
+.view-upgrade-membership .labels .field-content{
+	display: table-cell;
+	vertical-align: middle;
+	width: 234px;
+}
+.view-upgrade-membership .labels .views-field.views-field-add-to-cart-form{
+	height: 75px;
+}
+.view-upgrade-membership .labels .views-field.views-field-field-benefits .field-content{
+	height: 70px;
+}
+.view-upgrade-membership .labels .field-content{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.views-field.views-field-field-send-messages-to-paid-memb .field-content,
+.views-field.views-field-field-receive-messages-from-paid .field-content,
+.views-field.views-field-field-receive-messages-from-paid .field-content,
+.views-field.views-field-field-access-mobile-number-of-pa .field-content,
+.views-field.views-field-field-anyone-can-access-social-m .field-content,
+.views-field.views-field-field-price-display .field-content{
+	height: 50px;
+}
+.view-upgrade-membership .views-field.views-field-field-title, .view-upgrade-membership .views-field-title{
+	height: 79px;
+}
+.view-upgrade-membership .views-field.views-field-field-title .field-content, .view-upgrade-membership .views-field-title .field-content{
+	display: table-cell;
+	height: 75px;
+	vertical-align: bottom;
+	padding-bottom: 10px;
+	width: 234px;
+}
+.views-field.views-field-field-price-display .field-content{
+	font-weight: 700;
+	font-size: 15px;
+}
+.views-field.views-field-field-title .field-content{
+	font-size: 18px;
+	font-weight: 700;
+}
+.view-upgrade-membership .col-1 .views-field.views-field-title a{
+	color: #f18f00;
+	background: url(../img/gold-title.png) no-repeat 10px 3px;
+	width: 100%;
+	display: block;	
+}
+.view-upgrade-membership .col-2 .views-field.views-field-title a{
+	color: #666666;
+	background: url(../img/silver-title.png) no-repeat 10px 3px;
+	width: 100%;
+	display: block;	
+}
+.view-upgrade-membership .col-3 .views-field.views-field-title a{
+	color: #91c691;
+	background: url(../img/basic-title.png) no-repeat 10px 3px;
+	width: 100%;
+	display: block;	
+}
+.view-upgrade-membership .col-4 .views-field.views-field-title a{
+	color: #789fbb;
+	background: url(../img/free-title.png) no-repeat 10px 3px;
+	width: 100%;
+	display: block;	
+}
+.view-upgrade-membership .views-view-grid.cols-4{
+	float: left;
+	width: 80%;
+}
+.view-upgrade-membership .col-1 .btn-default:hover,
+.view-upgrade-membership .col-1 .btn-default{
+	background: #f18f00;
+	padding-left: 15px;
+	border: 1px solid #f18f00;
+}
+.view-upgrade-membership .col-2 .btn-default:hover,
+.view-upgrade-membership .col-2 .btn-default{
+	background: #666666;
+	padding-left: 15px;
+	border: 1px solid #666666;
+}
+.view-upgrade-membership .col-3 .btn-default:hover,
+.view-upgrade-membership .col-3 .btn-default{
+	background: #91c691;
+	padding-left: 15px;
+	border: 1px solid #91c691;
+}
+.view-upgrade-membership .col-4 .btn-default:hover,
+.view-upgrade-membership .col-4 .btn-default{
+	background: #789fbb;
+	padding-left: 15px;
+	border: 1px solid #789fbb;
+}
+.view-upgrade-membership{
+	float: left;
+	padding-bottom: 40px;
+}
+.features-register{
+	clear: both;
+}
+.view-upgrade-membership .views-field.views-field-add-to-cart-form{
+	height: 60px;
+}
+.view-upgrade-membership .labels table{
+	border-top: 1px solid #e0e8eb;
+	border-left: 1px solid #e0e8eb;
+	border-bottom: 1px solid #e0e8eb;
+}
+table.views-view-grid.cols-4{
+	border-top: 1px solid #e0e8eb;
+	border-right: 1px solid #e0e8eb;
+	border-bottom: 1px solid #e0e8eb;
+}
+.view-upgrade-membership .col-1.col-first{
+	border-left: 1px solid #e0e8eb;
+	position: relative;
+}
+.view-upgrade-membership .col-2{
+	border-left: 1px solid #e0e8eb;
+	position: relative;
+}
+.view-upgrade-membership .col-3{
+	border-left: 1px solid #e0e8eb;
+	position: relative;
+}
+.view-upgrade-membership .col-4{
+	border-left: 1px solid #e0e8eb;
+	position: relative;
+}
+.views-field-field-best-choice{
+	position:absolute;
+	right: -16px;
+	top: -2px;	
+}

@@ -1,0 +1,354 @@
+@media screen and (max-width:1200px) {
+	.container, .navbar.container{
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+}
+@media screen and (max-width:1160px) {
+	header .navbar-nav > .active > a, header .menu.nav > li > a, header .menu.nav > li > a:hover, header .menu.nav > li > a:active, header .nav > .active > a, header .menu.nav > li > a, header .menu.nav > li > a:hover, header .menu.nav > li > a:active,
+	.menu.nav.navbar-nav.secondary a{
+		font-size: 14px;
+	}
+	.navbar-nav li.leaf, header .nav li.leaf,
+	.menu.nav.navbar-nav.secondary .user.info	{
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	.menu.nav.navbar-nav.secondary .user.info	a,
+	.menu.nav.navbar-nav.secondary .user.logout a{	
+		height: 67px;
+	}
+}
+@media screen and (max-width:1024px) {
+	#panel_search_home{
+		background: none;
+	}
+	#panel_search_home .suffix{
+		font-size: 30px;
+		margin-top: 55px;
+	}
+	.footer{
+		background: url(../img/bg-footer-1024.png) repeat-y;
+	}
+	#bus_stops, #train-station{
+		padding-bottom: 30px;
+	}
+	.contact_owner .panels-flexible-column-first,
+	.contact_owner .panels-flexible-column-last{
+		clear:both;
+		width: 100%;
+	}
+	#my-rooms #verified .phone{
+		text-align: left;
+	}
+	.contact_owner .panels-flexible-column-last{
+		padding-top: 40px;
+	}
+}
+@media screen and (max-width:980px) {
+	#block-block-1{
+		text-align: left;
+		padding-left: 15px;
+	}
+	#block-block-4 .wrap{
+		width: 140px;
+		margin: 0 auto;
+	}
+	#block-block-1 .wrap{
+		width: 200px;
+		margin: 0 auto;
+	}
+	#block-menu-menu-bottom .menu.nav{
+		width: 200px;
+		margin: 0 auto;
+	}
+}
+@media screen and (max-width:890px) {
+	header .navbar-nav > .active > a, header .menu.nav > li > a, header .menu.nav > li > a:hover, header .menu.nav > li > a:active, header .nav > .active > a, header .menu.nav > li > a, header .menu.nav > li > a:hover, header .menu.nav > li > a:active,
+	.menu.nav.navbar-nav.secondary a{
+		font-size: 12px;
+	}	
+}
+@media screen and (max-width:820px) {
+	.container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse	{
+		margin-right: 0;
+		margin-left: 0;
+	}
+	#panel_search_home .suffix{
+		font-size: 24px;
+		padding-left: 15px;
+	}
+	#search-block-form input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		color: #005c6f;
+		font-size: 14px;
+		font-family: 'Open Sans';
+		font-weight: 600;
+		font-size: 18px;
+	}
+	#search-block-form input::-moz-placeholder { /* Firefox 19+ */
+		color: #005c6f;
+		font-size: 14px;
+		font-family: 'Open Sans';
+		font-weight: 600;
+		font-size: 18px;
+	}
+	#search-block-form input:-ms-input-placeholder { /* IE 10+ */
+		color: #005c6f;
+		font-size: 14px;
+		font-family: 'Open Sans';
+		font-weight: 600;
+		font-size: 18px;
+	}
+	#search-block-form input:-moz-placeholder { /* Firefox 18- */
+		color: #005c6f;
+		font-size: 14px;
+		font-family: 'Open Sans';
+		font-weight: 600;
+		font-size: 18px;
+	}	
+	.navbar-nav{
+		float: none;
+		width: 100%;
+		border-left: none;
+		margin: 0;
+	}
+	header .navbar-nav > .active > a, header .menu.nav > li > a, header .menu.nav > li > a:hover, header .menu.nav > li > a:active, header .nav > .active > a, header .menu.nav > li > a, header .menu.nav > li > a:hover, header .menu.nav > li > a:active, .menu.nav.navbar-nav.secondary a{
+		font-size: 18px;
+		width: 100%;
+		text-align: center;
+		display: block;
+		top: 33px;
+	}
+	.navbar-nav li.first.leaf, header .nav li.first.leaf{
+		border-left: 0;
+	}
+	.navbar-nav li.leaf, header .nav li.leaf, .menu.nav.navbar-nav.secondary .user.info{
+		width: 100%;
+		display: block;
+		max-width: 100%;
+	}
+	.menu.nav.navbar-nav.secondary .user.info	a, .menu.nav.navbar-nav.secondary .user.logout a {
+			height: 67px;
+			width: 100%;
+			text-align: center;
+			display: block;
+			height: 83px;
+	}	
+	.menu.nav.navbar-nav.secondary .user{
+		height: 112px;
+	}
+	#edit-field-choose-photo-from-my-image.active, #edit-field-image.active{
+		width: 100%;
+	}
+	#panel_search_home .suffix{
+		font-size: 24px;
+		padding-left: 15px;
+	}
+	.region.region-navigation,
+	.menu.nav.navbar-nav.secondary{
+		width: 100%;
+	}
+	header .not_login .nav > .active > a, header .not_login .menu.nav > li > a	{
+		top: 33px;
+    width: 100%;
+    display: block;		
+	}
+	.navbar-nav li.leaf, header .nav li.leaf{
+		width: 100%;
+    display: block;
+    text-align: center;
+	}
+	.input-group{
+		margin-left: 0;
+	}
+	.navbar-nav li.leaf, header .nav li.leaf{
+		border-right: 0;
+	}
+	
+	.menu.nav.navbar-nav.secondary a{
+    font-family: 'Open Sans';
+    font-weight: 600;
+    color: #005c6f;
+    font-size: 18px;
+    width: 100%;
+    display: block;		
+	}
+	.menu.nav.navbar-nav.secondary .user {
+		float: left;
+		text-align: center;
+		padding-left: 15px;
+		padding-right: 15px;
+		border-right: 1px solid #c6d7dd;
+		height: 113px;
+		padding-top: 40px;
+		width: 100%;
+		border-right: 0;
+	}
+	.not_login .menu.nav.navbar-nav.secondary {
+		width: inherit;
+		width: 100%;
+		float: none;
+		display: block;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+	}	
+	.menu.nav.navbar-nav.secondary .user:hover{
+		background: #f0f5f8;
+	}	
+	.navbar-default .navbar-collapse{
+		min-height: inherit;
+		height: auto;
+		overflow: hidden;
+	}
+	.search-form .prefix{
+		margin-left: 0;
+	}
+	.form-search .prefix{
+		margin-left: 0;
+	}
+	.language{
+    position: inherit;
+    text-align: center;
+    padding-bottom: 20px;
+	}
+}
+@media screen and (max-width:768px) {
+	.panels-flexible-column.left .user{
+		text-align: center;
+	}
+	.page-user .user.picture{
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	#block-block-1, #block-block-2, #block-block-3, #block-block-4{
+		text-align: center;
+		font-size: 18px;
+		padding-bottom: 40px;
+	}
+	#block-block-1, #block-block-3{
+		padding-bottom: 25px;
+	}
+	#block-block-1 .wrap{
+		width: 300px;
+	}
+	.footer .menu.nav{
+		text-align: center;
+	}
+	.footer, #block-block-4 a{
+		font-size: 18px;
+	}
+	footer .nav > li {
+    max-width: 100%;
+	}
+	footer .nav > li a{
+		font-size: 18px;
+	}
+	.menu.nav{
+		padding-bottom: 25px;
+	}
+	#block-block-5{
+		padding-bottom: 40px;
+	}
+	#block-block-4 .wrap{
+		width: 100%;
+	}
+	.footer .contacts, .footer .email, .footer .phone{
+		display: inline;
+	}
+	.view-find-accomodation-pictures .owl-theme .owl-controls .owl-buttons span.left{
+		width: 50px;
+	}
+	.view-find-accomodation-pictures .owl-theme .owl-controls .owl-buttons span.right{
+		width: 50px;
+		margin-left: -275px;
+	}
+	#my-rooms .paragraphs-item-room-details-right .content{
+		float: none;
+	}
+	#my-rooms .entity-paragraphs-item .content{
+		margin: 0 auto;
+	}
+	#train_station, #bus_stops, #cafe, #grocery_or_supermarket{
+		padding-bottom: 40px;
+    padding-left: 80px !important;
+    background-position: 30px 0px !important;
+	}
+	#search-form .checkbox label:nth-child(2n),
+	#search-form  .checkbox label{
+		padding-left: 30px;
+	}
+	#search-form{
+		left:0;
+		margin-left: 0;
+		width: 100%;
+	}
+	#user-register-form .form-item-pass-pass1, 
+	#user-register-form .form-item-pass-pass2,
+	#user-register-form .form-item-mail,
+	#user-register-form .form-item-pass{
+		width: 100% !important;
+	}	
+	#block-block-9 h2{
+		display: none;
+	}
+	.view-property-from-rooms .views-row{
+		padding-top: 20px;
+	}
+}
+@media screen and (max-width:700px) {
+	#search-block-form .input-group{
+		margin-top: 10px;
+	}
+	#panel_search_home .suffix {
+		font-size: 24px;
+		padding-left: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+		margin-top: 65px;
+	}	
+	#search-block-form{
+		width: 93%;
+	}
+	#my-rooms #verified .phone {
+		text-align: right;
+		background: url(../img/bg-verify-phone.png) no-repeat 0px 22px;
+		color: #526d73;
+		font-weight: 600;
+		padding-left: 25px;
+		padding-top: 20px;
+		width: 86px;
+	}	
+}
+@media screen and (max-width:600px) {
+	.view-find-accomodation-pictures .owl-theme .owl-controls .owl-buttons span.left,
+	.view-find-accomodation-pictures .owl-theme .owl-controls .owl-buttons span.right{
+		display: none;
+	}
+	#tenant-detail #verified .phone, #my-rooms #verified .phone{
+    background: url(../img/bg-verify-phone.png) no-repeat 2px 2px;
+    color: #526d73;
+    font-weight: 600;
+    padding-left: 28px;
+    text-align: left;		
+	}	
+	#weekly-rent{
+		width: 100%;
+	}
+	.min_age, .max-age{
+		width: 100%;
+	}
+	#search-form .max_rent, #search-form .max-age{
+		padding-left: 0;
+	}
+	.min_rent, .max_rent{
+		width: 100%;
+	}
+	.nav-tabs > li{
+		margin-top: 2px;
+	}
+	.left-rent-budget, .center-stay-length, .right-move-date{
+		width: 100%;
+	}
+}

@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * The installation file for the commerce_payment_eway module
+ */
+
+/**
+ * Implements hook_update().
+ */
+function commerce_payment_eway_update_7001() {
+
+  // Set the watchdog status back to a more sensible default.
+  $payment = rules_config_load('commerce_payment_commerce_payment_eway');
+  foreach($payment->actions() as $action) {
+    $action->settings['payment_method']['settings']['eway_watchdog']['watchdog_status'] = COMMERCE_PAYMENT_EWAY_WATCHDOG_STATUS_TEST;
+    $action->save();
+  }
+}
+
+/**
+ * Implements hook_requirements().
+ */
+function commerce_payment_eway_requirements($phase) {
+  $t = get_t();
+
+  // Make sure we have simplexml.
+  $has_simplexml = function_exists('simplexml_load_string');
+  $requirements['commerce_payment_eway_simplexml'] = array(
+    'title' => $t('SimpleXML'),
+    'value' => $has_simplexml ? $t('Enabled') : $t('Not found'),
+  );
+  if (!$has_simplexml) {
+    $requirements['commerce_payment_eway_simplexml']['severity'] = REQUIREMENT_ERROR;
+    $requirements['commerce_payment_eway_simplexml']['description'] = $t("Eway requires the SimpleXML library.");
+  }
+
+  // Put a warning on the reports page if NuSOAP or Libraries are missing.
+  module_load_include('module', 'commerce_payment_eway', 'commerce_payment_eway');
+  $nusoap = file_exists(_commerce_payment_eway_nusoap_path());
+  $requirements['commerce_payment_eway_nusoap']['title'] = $t('NuSOAP Library required for token payments.');
+  $requirements['commerce_payment_eway_nusoap']['value'] = $nusoap ? $t('Enabled') : $t('Disabled');
+  $requirements['commerce_payment_eway_nusoap']['severity'] = REQUIREMENT_OK;
+  $requirements['commerce_payment_eway_nusoap']['description'] = $t('eWAY Token payments requires the ' .
+    l('NuSOAP client', 'http://sourceforge.net/projects/nusoap/') . ' and ' .
+    l('Libraries.', 'http://drupal.org/project/libraries'));
+  if(!$nusoap) {
+    $requirements['commerce_payment_eway_nusoap']['severity'] = REQUIREMENT_WARNING;
+  }
+
+  return $requirements;
+}
+
+function commerce_payment_eway_schema() {
+  $schema = array();
+
+  $schema['commerce_eway_token'] = array(
+    'description' => 'Store customer tokens.',
+    'fields' => array(
+      'uid' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+        'description' => 'The {user}.uid.',
+      ),
+      'eway_id' => array(
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'description' => 'The eWAY ManagedCustomerID.',
+      ),
+    ),
+    'primary key' => array('uid'),
+  );
+
+  return $schema;
+}

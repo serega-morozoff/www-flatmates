@@ -1,0 +1,58 @@
+<?php
+function panel_searh_accomodation_detail_panels_pane_content_alter($content, $pane, $args, $contexts) {
+	$panel_array = Array();
+	$panel_array = $pane->configuration;
+
+	if(array_key_exists("admin_title", $panel_array)){
+		foreach($contexts as $context){
+			$data = $context->data;
+		}
+	//	dpm($data);
+		
+		if(isset($data->type)){
+			if($data->type == 'accomodation'){
+				$user_ = user_load($data -> uid);
+				if($panel_array["admin_title"] == "Search Accomodation Title"){
+					//dpm($data);
+					$gender = "";
+					$age = "";
+					$gender = ucfirst($data -> field_gender['und'][0]['value']);
+					$yrs = t("yrs");
+					$age = $data -> field_age['und'][0]['value'].$yrs;
+					$output = $data -> title;
+					if($gender !="")$output .= ", ". $gender;
+					if($age !="")$output .= ", ". $age;
+					$content->content = $output;
+				}elseif($panel_array["admin_title"] == "Verified Tenant"){
+					$em = t("Email");
+					$ph = t("Phone");
+					$content->content = "<div class='email col-md-6 col-sm-6 col-xs-12'>".$em."</div>";
+					$content->content .= "<div class='phone col-md-6 col-sm-6 col-xs-12'>".$ph."</div>";
+				}elseif($panel_array["admin_title"] == "Is Online Tenant"){
+					$logged = "";
+					if(user_is_logged_in($data->uid)){
+						$online = t("Online Today");
+						$logged = "<div class='is-logged'>" . $online . "</div>";
+					}
+					$role = t("Authenticated");
+					$role_class = "auth";
+					$status = "<div class='role " . $role_class . "'>" . $role . "</div>";					
+					foreach($user_ -> roles as $key=>$role){
+						if($key > 2){
+							$role_class = strtolower($role);
+							$status = "<div class='role " . $role_class . "'>" . $role . "</div>";
+						}elseif($key == 2){
+							$role = t("Authentic");
+							$role_class = strtolower($role);					
+							$status = "<div class='role " . $role_class . "'>" . $role . "</div>";
+						}
+					}	
+					$content->content = $logged.$status;
+				}elseif($panel_array["admin_title"] == "User Picture Tenant"){
+					$img = theme('image_style', array('path' => $user_->picture->uri, 'style_name' => 'user_detail'));
+					$content->content = $img;
+				}
+			}
+		}
+	}	
+}

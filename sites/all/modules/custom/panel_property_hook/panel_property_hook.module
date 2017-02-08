@@ -1,0 +1,46 @@
+<?php
+function panel_property_hook_panels_pane_content_alter($content, $pane, $args, $contexts) {
+	$panel_array = Array();
+	$panel_array = $pane->configuration;
+
+	if(array_key_exists("admin_title", $panel_array)){
+		global $user;
+		foreach($contexts as $context){
+			$data = $context->data;
+		}
+		if(isset($data->type)){
+			if($data->type == 'rooms' || $data->type == 'accomodation'){
+				$user_ = user_load($data -> uid);
+				if($panel_array["admin_title"] == "Mobile property"){
+					if(count($user_->field_mobile) > 0)$mobile = $user_->field_mobile['und'][0]['value'];
+					else $mobile = "Not verified";
+					if(count($user_ -> field_first_name) > 0) $ufn = $user_ -> field_first_name['und'][0]['value'];
+					else $ufn = "";
+					if(count($user_ -> field_last_name) > 0) $uln = $user_ -> field_last_name['und'][0]['value'];
+					else $uln = "";
+					$name = getLandrordTitle($ufn, $uln, $user_ -> name);
+					$t = t("Show mobile number of ");
+					$output = "<div class='show_mobile'><span class='text'>".$t." ".$name."</span><span class='phone'>".$mobile."</span></div>";
+					$content->content = $output;
+				}elseif($panel_array["admin_title"] == "Contact name"){
+					if(count($user_ -> field_first_name) > 0) $ufn = $user_ -> field_first_name['und'][0]['value'];
+					else $ufn = "";
+					if(count($user_ -> field_last_name) > 0) $uln = $user_ -> field_last_name['und'][0]['value'];
+					else $uln = "";
+					$name = getLandrordTitle($ufn, $uln, $user_ -> name);
+					$t = t("Contact ");
+					$output = $t.$name;
+					$content->content = $output;
+				}elseif($panel_array["admin_title"] == "No private message"){
+					global $user;
+					if($user->uid == 0){
+						$link = l("Authorize", "user");
+						$register = t("Please "); $register.=$link; $register.= t(" to send and recieve private message");
+						$output = "<div id='please-authorize'>$register</div>";
+						$content->content = $output;
+					}			
+				}
+			}
+		}
+	}	
+}

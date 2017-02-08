@@ -1,0 +1,47 @@
+.user_profile.picture img{
+	border-radius: 50%;
+	border: 10px solid #9fb1c0;
+}
+.panels-flexible-column.left .user{
+	text-align: right;
+}
+
+.panels-flexible-column.right .user{
+	text-align: center;
+}
+
+.panels-flexible-column.right .user,
+.panels-flexible-column.right .user a,
+.panels-flexible-column.left .user,
+.panels-flexible-column.left .user a{
+	color: #015c6f;
+	font-weight: 600;
+	font-size: 16px;
+	margin-top: 18px;
+}
+.user_profile.upgrade_membership .field-name-body a{
+	color: #fff !important;
+	background: #f18f00;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.user_profile.upgrade_membership .field-name-body a:hover{
+	text-decoration: none;
+}
+.page-user #block-system-main{
+	margin-top: 45px;
+}
+.page-user .user.name a{
+	padding-right: 30px;
+	background: url(../img/bg-profile-change.png) no-repeat right;
+}
+.page-user .user.gallery a{
+	padding-right: 30px;
+	background: url(../img/bg-profile-gallery.png) no-repeat right;
+}
+.page-user .user.payment.history a{
+	padding-right: 30px;
+	background: url(../img/bg-profile-payment.png) no-repeat right;
+}

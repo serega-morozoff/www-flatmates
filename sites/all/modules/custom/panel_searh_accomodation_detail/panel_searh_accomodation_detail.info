@@ -1,0 +1,7 @@
+name = Panel Search Accomodation Detail
+description = Panel Search Accomodation Detail
+core = 7.x 
+package = Custom Shop
+files[] = ajax/ajax.php
+
+stylesheets[all][] = css.css

@@ -1,0 +1,168 @@
+<?php
+
+
+/**
+ * Implements hook_block_info().
+ */
+function privatemsg_block_block_info() {
+  $blocks['privatemsg_block_new'] = array(
+    'info' => t('Write new message'),
+    'cache' => DRUPAL_NO_CACHE,
+    'access callback'  => 'privatemsg_user_access',
+    'access arguments' => array('write privatemsg'),
+  );
+
+  $blocks['privatemsg_block_list'] = array(
+    'info' => t('All messages'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  $blocks['privatemsg_block_sent'] = array(
+    'info' => t('Sent Messages'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function privatemsg_block_block_view($delta = '') {
+  global $user;
+  $block = array();
+
+  module_load_include('inc', 'privatemsg', 'privatemsg.pages');
+
+  switch ($delta) {
+    case 'privatemsg_block_new':
+      $block['subject'] = t('Write new message');
+
+      // To field customization.
+      $found_user = FALSE;
+
+      if (variable_get('privatemsg_block_current_user', FALSE) === FALSE) {
+        $form = drupal_get_form('privatemsg_new');
+      }
+      else {
+        if (arg(0) == 'user') {
+          $account = menu_get_object('user');
+          if ($account && isset($account->uid)) {
+            $form = drupal_get_form('privatemsg_new', $account->uid);
+            $found_user = TRUE;
+          }
+        }
+        elseif (arg(0) == 'node') {
+          $node = menu_get_object('node');
+
+          if ($node && isset($node->uid)) {
+            $account = user_load($node->uid);
+            if ($account->uid) {
+              $form = drupal_get_form('privatemsg_new', $account->uid);
+              $found_user = TRUE;
+            }
+          }
+        }
+        else {
+          $form = drupal_get_form('privatemsg_new');
+        }
+
+        // Only hide To if there are receipient found.
+        if ($found_user) {
+          $form['recipient']['#access'] = FALSE;
+        }
+      }
+
+      // Subject customization.
+      $form['subject']['#access'] = variable_get('privatemsg_block_hide_subject', FALSE) ? FALSE : TRUE;
+
+      $block['content'] = $form;
+      break;
+
+    case 'privatemsg_block_list':
+      $block['subject'] = t('All messages');
+      $block['content'] = drupal_get_form('privatemsg_list', 'list', $user);
+      break;
+
+    case 'privatemsg_block_sent':
+      $block['subject'] = t('Sent Messages');
+      $block['content'] = drupal_get_form('privatemsg_list', 'sent', $user);
+      break;
+
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_block_list_alter().
+ */
+function privatemsg_block_block_list_alter(&$blocks) {
+  foreach ($blocks as $key => $block) {
+    // Check privatemsg access permission.
+    if ($block->module == 'privatemsg_block') {
+      switch ($block->delta) {
+        case 'privatemsg_block_new':
+          if (!privatemsg_user_access('write privatemsg')) {
+            unset($blocks[$key]);
+          }
+          break;
+
+        case 'privatemsg_block_list':
+          if (!privatemsg_user_access()) {
+            unset($blocks[$key]);
+          }
+          break;
+
+        case 'privatemsg_block_sent':
+          if (!privatemsg_user_access()) {
+            unset($blocks[$key]);
+          }
+          break;
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_block_configure().
+ */
+function privatemsg_block_block_configure($delta = '') {
+  global $user;
+  $form = array();
+
+  if ($delta == 'privatemsg_block_new') {
+    $form['privatemsg_block_current_user'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Send message to current user or node author being viewed.'),
+      '#default_value' => variable_get('privatemsg_block_current_user', FALSE),
+      '#description' => t('Current user or node author being viewed will be the receipient.'),
+    );
+    $form['privatemsg_block_hide_to'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Hide "To" field.'),
+      '#default_value' => variable_get('privatemsg_block_hide_to', FALSE),
+      '#description' => t('Hide the "To" field from user.'),
+    );
+    $form['privatemsg_block_hide_subject'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Hide "Subject" field.'),
+      '#default_value' => variable_get('privatemsg_block_hide_subject', FALSE),
+      '#description' => t('Hide the "Subject" field from user.'),
+    );
+  }
+
+  return $form;
+}
+
+/**
+ * Implementation of hook_block_save().
+ */
+function privatemsg_block_block_save($delta = '', $edit = array()) {
+  if ($delta == 'privatemsg_block_new') {
+    variable_set('privatemsg_block_current_user', $edit['privatemsg_block_current_user']);
+    variable_set('privatemsg_block_hide_to', $edit['privatemsg_block_hide_to']);
+    variable_set('privatemsg_block_default_subject', $edit['privatemsg_block_default_subject']);
+    variable_set('privatemsg_block_hide_subject', $edit['privatemsg_block_hide_subject']);
+  }
+}

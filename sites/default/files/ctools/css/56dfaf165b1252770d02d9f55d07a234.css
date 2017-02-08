@@ -1,0 +1,147 @@
+.panels-flexible-3 .panels-flexible-region {
+  padding: 0;
+}
+
+.panels-flexible-3 .panels-flexible-region-inside {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.panels-flexible-3 .panels-flexible-region-inside-first {
+  padding-left: 0;
+}
+
+.panels-flexible-3 .panels-flexible-region-inside-last {
+  padding-right: 0;
+}
+
+.panels-flexible-3 .panels-flexible-column {
+  padding: 0;
+}
+
+.panels-flexible-3 .panels-flexible-column-inside {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.panels-flexible-3 .panels-flexible-column-inside-first {
+  padding-left: 0;
+}
+
+.panels-flexible-3 .panels-flexible-column-inside-last {
+  padding-right: 0;
+}
+
+.panels-flexible-3 .panels-flexible-row {
+  padding: 0 0 0.5em 0;
+  margin: 0;
+}
+
+.panels-flexible-3 .panels-flexible-row-last {
+  padding-bottom: 0;
+}
+
+.panels-flexible-column-3-main {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-3-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-3 {
+  width: auto;
+}
+
+.panels-flexible-region-3-center {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-row-3-main-row-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-region-3-flatmates {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-row-3-1-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-region-3-room_details_right {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-row-3-2-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-region-3-property_features {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-row-3-3-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-region-3-about_me_and_flatmates {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-row-3-4-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-column-3-6 {
+  float: left;
+  width: 49.5000%;
+}
+
+.panels-flexible-column-3-7 {
+  float: left;
+  width: 49.5000%;
+}
+
+.panels-flexible-row-3-5-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-region-3-email {
+  float: left;
+  width: 49.5000%;
+}
+
+.panels-flexible-region-3-mobile {
+  float: left;
+  width: 49.5000%;
+}
+
+.panels-flexible-row-3-10-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-region-3-solcial_accs {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-row-3-11-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-region-3-sen_meaasge {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-row-3-9-inside {
+  padding-right: 0px;
+}
+

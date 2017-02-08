@@ -1,0 +1,42 @@
+<?php
+
+function private_messages_form_privatemsg_new_alter(&$form, &$form_state){
+	if(isset($_GET['user']) && $_GET['user'] != ""){
+		$form['recipient']['#value'] = $_GET['user'];
+	}else{
+		$title = t("Type your message here");
+		global $user;
+		if(arg(0) == 'user' && $user->uid != 0){
+			$user_ = user_load(arg(1));
+			$form['recipient']['#value'] = $user_->name;
+			if($user->uid != 0){
+				$form['subject']['#value'] = "From ".$user->name;
+			}
+			$form['body']['#title'] = $title;	
+		}elseif(arg(0) == 'node' && $user->uid != 0){
+			$node = node_load(arg(1));
+			$user_ = user_load($node->uid);
+			$form['recipient']['#value'] = $user_->name;
+			if($node->uid != 0){
+				$form['subject']['#value'] = "From ".$user->name;
+			}
+			$form['body']['#title'] = $title;			
+		}
+	}
+}
+
+
+function private_messages_form_privatemsg_list_alter(&$form, &$form_state, &$form_id) {
+	//dpm($form);
+	unset($form['updated']['actions']['tag-add']);
+	unset($form['updated']['actions']['tag-add-submit']);
+	unset($form['updated']['actions']['operation']);
+	unset($form['updated']['actions']['submit']);
+	unset($form['filter']['actions']['save']);
+	unset($form['filter']['author']);
+	unset($form['filter']['search']['#title']);
+	$form['filter']['search']['#attributes']['placeholder'] = t("Find message. Type search query here");
+	//$form['filter']['#attributes']['class'] = "col-md-8 col-sm-8 col-xs-12";
+}
+
+

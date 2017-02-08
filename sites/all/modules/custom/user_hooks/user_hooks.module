@@ -1,0 +1,47 @@
+<?php
+/**
+ * Implementation of hook_user()
+ */
+function user_hooks_user($op, &$edit, &$account, $category = NULL) {
+	dpm($login_history);
+  switch($op) {
+
+    // Successful login
+    case 'load':
+      // If it's less than two it means we don't have a previous login timtestamp yet.
+      $account->custom_last_login = sizeof($account->custom_login_history) < 2 
+        ? NULL 
+        : array_pop($account->custom_login_history); 
+      break;
+
+    case 'login':
+      // If it's the first time, we don't have a history
+      $login_history = is_array($account->custom_login_history) 
+        ? $account->custom_login_history 
+        : array();
+
+      // Get rid of the old value.
+      if (sizeof($login_history) == 2) {
+        array_pop($login_history);
+      }
+
+      // Add to the history the current login timestamp.
+      array_unshift($login_history, $account->login);
+
+      user_save($account, array('custom_login_history' => $login_history));
+      break;
+  }
+}
+
+/**
+ * Implements hook_query_alter().
+ *
+ * Restrict the media library to show only images that a user created.
+ */
+function user_query_alter(QueryAlterableInterface $query) {
+  $tables = $query->getTables();
+  if(isset($tables['base']) && $tables['base']['table'] == 'file_managed' && $_GET['q'] == 'media/browser/list') {
+    global $user;
+    $query->condition('uid', $user->uid);
+  }
+}
