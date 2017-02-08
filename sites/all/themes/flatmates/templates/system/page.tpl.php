@@ -105,13 +105,13 @@
       <div class="navbar-collapse collapse" id="navbar-collapse">
 			
         <nav role="navigation">
-					<? if($user->uid){?>
+					<?php if($user->uid){?>
 						<?php if (!empty($primary_nav)): ?>
 							<?php print render($primary_nav); ?>
 						<?php endif; ?>		
 						<div class="menu nav navbar-nav secondary">
 							<div class="user info">
-								<?
+								<?php
 								if(count($user_detail->field_first_name) == 0){
 									$user_detail->field_first_name['und'][0]['value'] = ucfirst($user_detail->name);
 								}
@@ -132,7 +132,7 @@
 									print render($block['content']);		
 							?>
 						</div>						
-					<?}else{?>
+					<?php }else{?>
 						<div class="not_login">
 							<div class="menu nav navbar-nav secondary">
 								<div class="user login">
@@ -149,7 +149,7 @@
 								?>
 							</div>							
 						</div>
-					<? } ?>
+					<?php } ?>
         </nav>
       </div>
     <?php endif; ?>
