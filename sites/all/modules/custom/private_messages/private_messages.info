@@ -1,0 +1,4 @@
+name = Private Messages Hook
+description = Insert recipient
+core = 7.x 
+package = Custom Shop

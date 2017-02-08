@@ -1,0 +1,354 @@
+/**
+*SEARCH
+**/
+#advanced-filters{
+	clear: both;
+}
+#search-form h2.pane-title,
+#advanced-search h2.pane-title{
+	color: #131925;
+	font-weight: 700;
+	font-size: 36px;
+	text-align: center;
+}
+#search-form{
+	background: #fff;
+	z-index: 1000;
+	position: absolute;
+	top: -110px !important;
+	/*margin-top: -260px;*/
+	display: none;
+	left: 50%;
+	margin-left: -360px;	
+}
+.pop-up input[type='text'],
+.pop-up input[type='number'],
+.pop-up select{
+	width: 100%;
+}
+#weekly-rent .row .col-md-6,
+#weekly-rent .row .col-sm-6,
+#weekly-rent .row .col-xs-6
+{
+	padding-left: 0;padding-right: 0;
+}
+#search-code{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+#search-form .checkbox,
+#advanced-search .checkbox{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+#overlay{
+	position: fixed;
+	background:url(../img/bg-overlay.png) repeat;
+	width: 100%;
+	height: 100%;
+	display: none;
+	z-index:999;
+}
+#search-form  input[type="text"],
+#search-form  input[type="number"],
+#search-form  .selectBox,
+#advanced-search  input[type="text"],
+#advanced-search  input[type="number"],
+#advanced-search  .selectBox{
+	width: 100% !important;
+}
+.right_7{
+	padding-right: 15px !important;
+}
+.left_7{
+	padding-left: 15px !important;
+}
+#search-form  .checkbox label,
+#advanced-search  .checkbox label{
+	margin-left: 0;
+	padding-left: 30px;
+}
+#search-form,
+#advanced-search {
+	max-width: 720px;
+}
+#close, .close{
+	background: url(../img/bg-close.png) no-repeat;
+	width: 14px;
+	height: 13px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
+}
+.item .close{
+	right: 10px;
+}
+#search-code{
+	padding-bottom: 20px;
+}
+#switcher{
+	text-align: center;
+	padding-bottom: 25px;
+}
+#switcher .switch{
+	color: #015c6f;
+	font-size: 18px;
+	font-weight: 700;
+	display: inline;
+	cursor: pointer;
+}
+#switcher .switch.active{
+	color: #fff;
+	padding-left: 15px;
+	padding-right: 15px;
+	background: #015c6f;
+	padding-bottom:1px;
+}
+#switcher .switch.rooms{
+	margin-right: 10px;
+}
+#switcher .switch.flatmates{
+	margin-left: 10px;
+}
+#search-form  .filters,
+#advanced-search  .filters{
+	float: left;
+	width: 100%;
+	display: block;
+	padding-bottom: 20px;	
+}
+#search-form  #preffered-stay-length input,
+#advanced-search  #preffered-stay-length input{
+	padding-left: 15px;
+}
+.advanced-filters{
+	margin-top: 30px;
+	clear: both;
+	background: #edf0f1;
+	float: left;
+}
+.advanced-filters .title {
+	text-align: center;
+}
+.advanced-filters .title h2{
+	color: #015c6f;
+	font-weight: 700;
+	display: inline;
+	background: #fff;
+	border-radius: 30px;
+	font-size: 21px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 3px;
+	position: relative;
+	top: -12px;
+}
+#search-form  .selectBox-dropdown .selectBox-label,
+#advanced-search  .selectBox-dropdown .selectBox-label{
+	width: 100%;
+}
+#search-form .selector,
+#advanced-search .selector{
+	padding-bottom: 15px;
+}
+#search-form #gender, #search-form #room_type,
+#advanced-search #gender, #advanced-search #room_type{
+	padding-top: 15px;
+}
+#search-form .checkbox label,
+#advanced-search .checkbox label{
+	padding-bottom: 30px;
+}
+#search-form .checkbox label:nth-child(2n),
+#advanced-search .checkbox label:nth-child(2n){
+	padding-left: 45px;
+}
+#search-form .form-action,
+#advanced-search .form-action{
+	width: 100%;
+	text-align: center;
+	padding-top: 23px;
+	padding-bottom: 23px;
+	clear: both;
+}
+#search-form .form-action button:hover,
+#advanced-search .form-action button:hover,
+.form-search .make_search:hover{
+	background: #789fbb;
+}
+#search-form .form-action button,
+#advanced-search .form-action button,
+.form-search .make_search{
+	color: #fff;
+	font-weight: 700;
+	font-size: 18px;
+	padding: 6px;
+	background: #326873;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	border: none;
+}
+.form-search .make_search{
+	margin-top: 30px;
+	text-align: center;
+	cursor: pointer;
+}
+#search-form .selectBox-label,
+#advanced-search .selectBox-label{
+	width: 100% !important;
+}
+#search-form #search-flatmates,
+#advanced-search #search-flatmates{
+	display: block;
+}
+
+#search-form .min_age, #search-form .max_age,
+#search-form .min_rent, #search-form .max_rent, #search-form .max-age,
+#search-form .min_stay, #search-form .max_stay,
+#advanced-search .min_age, #advanced-search .max_age,
+#advanced-search .min_rent, #advanced-search .max_rent, #advanced-search .max-age,
+#advanced-search .min_stay, #advanced-search .max_stay{
+	padding-left: 0; padding-right: 0;
+}
+#search-form .min_stay input,
+#search-form .min_age input,
+#search-form .max-age input,
+#advanced-search .min_stay input,
+#advanced-search .min_age input,
+#advanced-search .max-age input{
+	padding-left: 15px;
+}
+#advanced-search .max-age, #advanced-search .max_rent, #advanced-search .max_stay,
+#search-form .max-age, #search-form .max_rent, #search-form .max_stay{
+	padding-left: 15px;
+}
+#advanced-search .stay,
+#search-form .stay{
+	padding-top: 25px;
+}
+#advanced-search .preferred-accomodation,
+#search-form .preferred-accomodation{
+	padding-top: 57px;
+}
+#people_type, #professions{
+	padding-top: 15px;
+}
+#advanced-search .selector.gender,
+#search-form .selector.gender{
+	padding-bottom: 0;
+}
+#search-code .wrap{
+	background: url(../img/bg-search-code.png) repeat-x;
+	position: relative;
+	background-position: 0 3px;
+}
+#search-code .wrap:after{
+	content: " ";
+	background: url(../img/bg-search-code-after.png) no-repeat;
+	position: absolute;
+	right: -2px;
+	top: -2px;
+	width: 24px;
+	height: 63px;
+}
+#search-code input#search-code-input{
+  background: url(../img/bg-search-but.png) no-repeat center;
+	background-position: 10px 11px;
+	padding-left: 60px;
+	padding-top: 29px;
+	padding-bottom: 28px;
+	border: none;
+	border-top: 1px solid #e0e5e7;
+	border-left: 1px solid #e0e5e7;
+	border-bottom: 1px solid #e0e5e7;	
+	color: #005c6f;
+	font-size: 18px;
+	font-weight: 600;
+	padding-right: 25px;
+}
+#search-code input[name=search-item], #search-block-form input[name=search-item]{
+	padding-left: 15px;
+	padding-right: 30px;
+	cursor: default;
+}
+#search-block-form{
+	position: relative;
+}
+.form-search .item{
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+.form-search .prefix{
+	margin-left: 30px;
+	width: 100%;
+	padding: 30px;
+	background: #fff;
+	border: 1px solid #e0e5e7;
+	display: none;
+	position: absolute;
+	z-index: 999;
+}
+.form-search  #switcher{
+	padding-bottom: 0;
+	padding-bottom: 0;
+}
+.prefix input{
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+	width: 100%;
+}
+.form-search .item{
+	position: relative;
+}
+#locations .item:last-child{
+	margin-bottom: 30px;
+}
+#search-code input[name='search-item']{
+	border: 1px solid #e0e5e7;
+}
+.page-search-node .form-search #switcher {
+    padding-bottom: 25px;
+    padding-top: 15px;
+}
+.search_form .link{
+	text-align: center;
+	padding-bottom: 70px;
+}
+.search_form .link a{
+	font-family: 'Open Sans';
+	font-weight: 600;
+	color: #005c6f;
+	font-size: 18px;
+	background: url(../img/bg-search-but.png) no-repeat left;
+	padding-left: 40px;
+	padding-top: 10px;
+	display: inline;
+	padding-bottom: 10px;
+}
+.tooltip-inner{
+	background-color: #f18f00;
+}
+.tooltip.top .tooltip-arrow{
+	border-top-color: #f18f00;
+}
+h2.no-results{
+	text-align: center;
+	color: #005c6f;
+	text-transform: uppercase;
+}
+.make_search{
+	clear: both;
+}
+#advanced-search .form-action button{
+	margin-top: 0;
+	margin-left: 0;
+}
+#advanced-search .form-action{
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.checkbox input[type="checkbox"]{
+	width: 10px;
+}

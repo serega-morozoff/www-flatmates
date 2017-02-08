@@ -1,0 +1,60 @@
+<?php
+/**
+ * hook_form_alter Add price to add to cart form
+ */
+function form_hooks_form_alter(&$form, &$form_state, $form_id) {
+	if (strpos($form_id, 'user_register_form') !== FALSE){
+		$form['field_first_name']['#attributes']['class'][] = "col-sm-6";
+		$form['field_first_name']['#attributes']['class'][] = "col-md-4";
+		$form['field_last_name']['#attributes']['class'][] = "col-sm-6";
+		$form['field_last_name']['#attributes']['class'][] = "col-md-4";		
+		$form['field_mobile']['#attributes']['class'][] = "col-sm-6";
+		$form['field_mobile']['#attributes']['class'][] = "col-md-4";	
+	}
+	if (strpos($form_id, 'user_pass') !== FALSE){
+		$suff = t("On this e-mail we will sent you a new password.");	
+		$form['name']["#suffix"] = "<div class='suffix'>" . $suff . "</div>";
+	}
+	if (strpos($form_id, 'accomodation_node_form') !== FALSE){
+		$t= t("Upload new photos");
+		$form["field_image"]["und"]["#file_upload_title"] = "<span>" . $t . "</span>";
+		$t= t("Choose photo from my image gallery");
+		$form["field_choose_photo_from_my_image"]["und"]["#file_upload_title"] =  "<span>" . $t . "</span>";
+		$form["actions"]["submit"]['#attributes']['class'][] =  "create-list";
+		$form["actions"]["submit"]["#value"] = t("Create my list");
+	}	
+	if (strpos($form_id, 'property_node_form') !== FALSE){
+		$t= t("Upload new photos");
+		$form["field_image"]["und"]["#file_upload_title"] = "<span>" . $t . "</span>";
+		$t= t("Choose photo from my image gallery");
+		$form["field_choose_photo_from_my_image"]["und"]["#file_upload_title"] =  "<span>" . $t . "</span>";
+		$form["actions"]["submit"]['#attributes']['class'][] =  "create-list";
+		$form["actions"]["submit"]["#value"] = t("Create my list");
+		$form['field_address']['#attributes']['class'][] = "col-md-4";
+		$form['field_address']['#attributes']['class'][] = "col-sm-4";
+		$form['field_address']['#attributes']['class'][] = "col-xs-12";
+		$t= t("You have added 0 out of 5 allowed Rooms.");
+		$form['field_rooms']['und']['cardinality_count']['#markup'] = '<div class="ief-cardinality-count">'.$t.'</div>';
+		$t = t("+ Adding another Room.");
+		$form['field_rooms']['und']['actions']['ief_add']['#value'] = $t;
+		$t= t("General Details");
+		$form['field_address']["#prefix"] = "<div class='general'>" . $t . "</div>";
+		$t = t("+ Adding another Room.");
+		$t = t("Create Room");
+		$form['actions']['ief_add_save']['#value'] = $t;		
+	}
+	if (strpos($form_id, 'commerce_cart_add_to_cart_form') !== FALSE){
+		$form['submit']['#value'] = t("Select");
+	}	
+	if (strpos($form_id, 'privatemsg_list') !== FALSE){
+		//dpm($form);
+	}
+	
+	
+}
+
+function form_hooks_search_page($results){
+	/*echo "<pre>";
+		print_r($results);
+	echo "</pre>";*/
+}

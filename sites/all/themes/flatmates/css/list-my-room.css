@@ -1,0 +1,130 @@
+.panel-title.fieldset-legend,
+.panel-heading{
+	display: none;
+}
+fieldset, .panel{
+	border: none;
+	box-shadow: 0 0 0;
+	padding-left: 0;
+
+}
+.group-right-group-property{
+	padding-right: 0;
+}
+.upload-property{
+	clear: both;
+}
+.panel-body{
+	padding-left: 0;
+	padding-right: 0;
+}
+.page-node-84 .selectBox-dropdown .selectBox-label{
+	padding: 2px 14px;
+}
+.page-node-84 .field-name-field-address{
+	float: none;
+	margin: 0 auto;
+}
+.page-node-84 .field-name-field-address:before{
+	content: " ";
+	background: url(../img/bg-add-location.png) no-repeat;
+	position: absolute;
+	width: 80px;
+	height: 32px;
+	left: -80px;
+	top: 40px;
+}
+.group-right-group-property, .group-right-group {
+	padding-left: 15px;
+}
+.group-right-group{
+	padding-right: 0;
+}
+.group-left-group{
+	padding-right: 15px;
+}
+.page-node-84 #edit-field-choose-photo-from-my-image label.control-label{
+	float: left;
+}
+.page-node-84 #edit-field-accomodation{
+	display: block;
+}
+.page-node-84 .form-item-body-und-0-value span.field-edit-link{}
+.page-node-84 .group-left-group-property .form-item,
+.page-node-84 .group-right-group-property .form-item,
+.group-left-group .form-item, .group-right-group .form-item {
+	text-align: left;
+}
+.page-node-84 .field-type-entityreference.field-name-field-rooms .btn-success{
+	background: #fff;
+	color: #466369;
+	border: none !important;
+}
+.page-node-84 .field-type-entityreference.field-name-field-rooms .btn-success:hover{
+	border: none !important;
+}
+.page-node-84 #edit-field-rooms-und-actions{
+	text-align: left;
+}
+.group-hide-group, span.field-edit-link{
+	display: none !important;
+}
+.page-node-84 label[for="edit-field-property-description-und-0-value"],
+.page-node-84 label[for="edit-body-und-0-value"], .general, .upload_h,
+.rooms_h{
+	text-align: center;
+	color: #015c6f;
+	font-size: 24px;
+	font-weight: 700;
+	padding-top: 40px;
+	margin-top: 40px;
+	position: relative;
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;	
+	background: #fff url(../img/bg-5.png) no-repeat 50% 0;
+	margin-bottom: 30px;
+}
+.general{
+	background: #fff url(../img/bg-1.png) no-repeat 50% 0;
+}
+.upload_h{
+	background: #fff url(../img/bg-2.png) no-repeat 50% 0;
+}
+.rooms_h{
+	background: #fff url(../img/bg-3.png) no-repeat 50% 0;
+}
+label[for="edit-field-features-und"]{
+	background: #fff url(../img/bg-4.png) no-repeat 50% 0;
+}
+.page-node-84 label[for="edit-field-property-description-und-0-value"]{
+	background: #fff url(../img/bg-5.png) no-repeat 50% 0;
+}
+.page-node-84 label[for="edit-body-und-0-value"]{
+	background: #fff url(../img/bg-6.png) no-repeat 50% 0;	
+}
+.form-item-field-property-description-und-0-value, .group-upload-photos,
+.field-type-entityreference.field-name-field-rooms, .page-node-84 .field-name-body,
+.group-address{
+	position: relative;
+}
+.form-item-field-property-description-und-0-value:before,
+.group-upload-photos:before, .field-type-entityreference.field-name-field-rooms:before,
+.page-node-84 .field-name-body:before, .group-address:before{
+	border-bottom: 1px solid #c6d7dd;
+	content: " ";
+	position: absolute;
+	height: 2px;
+	width: 100%;
+	left: 0;
+	top: 97px;
+}
+.group-address:before{
+	top: 113px;
+}
+.form-item-field-rooms-und-form-status{
+	display: none;
+}
+#edit-field-rooms-und-form-actions{
+	clear: both;
+}

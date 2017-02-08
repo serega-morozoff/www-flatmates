@@ -1,0 +1,48 @@
+name = Bootstrap Sub-Theme Flatmates (CDN)
+description = Uses the jsDelivr CDN for all CSS and JavaScript. No source files or compiling is necessary and is recommended for simple sites or beginners.
+core = 7.x
+base theme = bootstrap
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[navigation]     = 'Navigation'
+regions[header]         = 'Top Bar'
+regions[highlighted]    = 'Highlighted'
+regions[help]           = 'Help'
+regions[content]        = 'Content'
+regions[sidebar_first]  = 'Primary'
+regions[sidebar_second] = 'Secondary'
+regions[share]         	= 'Share'
+regions[footer]         = 'Footer'
+regions[page_top]       = 'Page top'
+regions[page_bottom]    = 'Page bottom'
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/search-forms.css
+stylesheets[all][] = css/frontcss.css
+stylesheets[all][] = css/facility.css
+stylesheets[all][] = css/list-my-room.css
+stylesheets[all][] = css/user-profile.css
+stylesheets[all][] = css/upgrade-membership.css
+stylesheets[all][] = css/private-msg.css
+
+
+
+
+stylesheets[all][] = css/break-points.css
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Javascript
+;;;;;;;;;;;;;;;;;;;;;
+
+scripts[] = js/js.js
+scripts[] = js/jquery.cookie.js

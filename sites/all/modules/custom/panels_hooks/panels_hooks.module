@@ -1,0 +1,121 @@
+<?php
+function panels_hooks_panels_pane_content_alter($content, $pane, $args, $contexts) {
+	$panel_array = Array();
+	$panel_array = $pane->configuration;
+	global $user;
+	if(array_key_exists("admin_title", $panel_array)){
+		foreach($contexts as $context){
+			$data = $context->data;
+		}		
+		if($panel_array["admin_title"] == "Listing"){
+			$query = new EntityFieldQuery();
+			$query->entityCondition('entity_type', 'node')
+				->entityCondition('bundle', 'property')
+				->propertyCondition('status', NODE_PUBLISHED)
+			;
+			$result = $query->execute();
+			$count = count($result['node']);			
+			
+			$query = new EntityFieldQuery();
+			$query->entityCondition('entity_type', 'node')
+				->entityCondition('bundle', 'accomodation')
+				->propertyCondition('status', NODE_PUBLISHED)
+			;
+			$result = $query->execute();
+			$count_accomodation = count($result['node']);
+			
+			$output = "<div class='tenants front_page_module' id='front_page_module'>";
+			$output .= "</div>";
+			$output .= "<input type='hidden' id='all-property' value='" . $count . "'>";
+			$output .= "<input type='hidden' id='all-accomodation' value='" . $count_accomodation . "'>";
+			$content->content = $output;
+		}elseif($panel_array["admin_title"] == "Verified"){
+			$em = t("Email");
+			$ph = t("Phone");
+			$content->content = "<div class='email col-md-6 col-sm-6 col-xs-12'>".$em."</div>";
+			$content->content .= "<div class='phone col-md-6 col-sm-6 col-xs-12'>".$ph."</div>";
+		}elseif($panel_array["admin_title"] == "Is Online"){
+			$user_ = user_load(arg(1));
+			$logged = "";
+			if(user_is_logged_in($user_ -> uid)){
+				$online = t("Online Today");
+				$logged = "<div class='is-logged'>" . $online . "</div>";
+			}
+			foreach($user_ -> roles as $key=>$role){
+				$role = t("Authenticated");
+				$status_class = "auth";
+				$status = "<div class='role " . $role_class . "'>" . $role . "</div>";
+				if($key > 2){
+					$role_class = strtolower($role);
+					$status = "<div class='role " . $role_class . "'>" . $role . "</div>";
+				}elseif($key == 2){
+					$role = t("Authenticated");
+					$role_class = strtolower($role);					
+					$status = "<div class='role " . $role_class . "'>" . $role . "</div>";
+				}
+			}		
+			$content->content = $logged.$status;
+		}
+		if($panel_array["admin_title"] == "Search Listing"){
+			$query = new EntityFieldQuery();
+			$query->entityCondition('entity_type', 'node')
+				->entityCondition('bundle', 'property')
+				->propertyCondition('status', NODE_PUBLISHED)
+			;
+			$result = $query->execute();
+			$count = count($result['node']);
+			
+			$query = new EntityFieldQuery();
+			$query->entityCondition('entity_type', 'node')
+				->entityCondition('bundle', 'accomodation')
+				->propertyCondition('status', NODE_PUBLISHED)
+			;
+			$result = $query->execute();
+			$count_accomodation = count($result['node']);
+			$output = "<div class='tenants front_page_module' id='search_module'>";
+			$output .= "</div>";
+			$output .= "<input type='hidden' id='all-property' value='" . $count . "'>";
+			$output .= "<input type='hidden' id='all-accomodation' value='" . $count_accomodation . "'>";
+			$content->content = $output;			
+		}
+		if($panel_array["admin_title"] == "My Image Gallery"){
+			$t=t("My Image Gallery");
+			$output = "<a href='/gallery/".$user->name."'>".$t."</a>";
+			$content->content = $output;						
+		}
+		if($panel_array["admin_title"] == "Payment History"){
+			$t=t("Payment History");
+			$output = "<a href='/user/payment'>".$t."</a>";
+			$content->content = $output;						
+		}		
+		if($panel_array["admin_title"] == "User Name"){
+			$user_ = user_load($user->uid);
+			if(count($user_->field_first_name) >0 && count($user_->field_last_name)>0){
+				$output = "<a href='/user/".$user->uid."/edit'>".$user_->field_first_name['und'][0]['value']." ".$user_->field_last_name['und'][0]['value']."</a>";
+			}else{
+				$output = "<a href='/user/".$user->uid."/edit'>".$user->name."</a>";
+			}
+			$content->content = $output;						
+		}			
+		if($panel_array["admin_title"] == "User account"){
+			$user_ = user_load($user->uid);
+			foreach($user_ -> roles as $key=>$role){
+				$status = t("authenticated");
+				$status_class = "auth";
+				$tooltip = t("Authenticated account. Please Upgrade your membership");
+				if($key > 2){
+					$status = $role;
+					$status_class = strtolower($status);
+					$tid = taxonomy_get_term_by_name($role);
+					$tooltip = "Administrator";
+					foreach($tid as $t){
+						$tooltip = $t->description;
+					}
+				}
+			}
+			$t = t("account");
+			$output = "<div class='user_role inline_block ".$status_class."'><span data-toggle='tooltip' title='$tooltip' >" . $status ." ".$t. "</span></div>";
+			$content->content = $output;						
+		}		
+	}
+}

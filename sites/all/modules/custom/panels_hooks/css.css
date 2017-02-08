@@ -1,0 +1,237 @@
+#front_page_module{
+	float: left;
+	margin-top: 30px;
+}
+.tenants.front_page_module .rows{
+	width: 25%;
+	float: left;
+	text-align: center;
+	min-height: 445px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-bottom: 25px;
+	position: relative;
+	cursor: pointer;
+	background: #fff;	
+}
+.tenants.front_page_module .rows:hover{
+	background: url(img/bg-user-hover.png) no-repeat bottom;
+}
+
+.tenants.front_page_module .rows:hover .user_cost{
+	background: #f18f00;
+	color: #fff;
+}
+
+.tenants.front_page_module .rows:hover .user_cost:after{
+	content: " ";
+	background: url(img/bubble-arrow.png) no-repeat top;
+	position: absolute;
+	padding: 10px;
+	bottom: -14px;
+	left: 12px;
+}
+
+.tenants.front_page_module .rows:hover .user_name:after,
+.tenants.front_page_module .rows:hover .room_title:after{
+	content: " ";
+	background: url(img/bg-username-hover.png) no-repeat;
+	padding: 30px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+.tenants.front_page_module .user_image{
+	max-width: 175px;
+	margin: 0 auto;
+	position: relative;
+}
+.tenants.front_page_module .user_name,
+.tenants.front_page_module .room_title{
+	font-size: 18px;
+	font-weight: 700;
+	color:#1e698d;
+	margin-top: 1px;
+	position: relative;
+	line-height: 20px;
+}
+.tenants.front_page_module .room_title{
+	padding-top: 10px;
+}
+.tenants.front_page_module .user_gender,
+.tenants.front_page_module .user_birth{
+	color:#1e698d;
+	font-weight: 200;
+}
+.tenants.front_page_module .user_cost{
+	display: inline-block;
+	top: 10px;
+	right: -35px;
+	position: absolute;
+	font-weight: 700;
+	font-size: 18px;
+	background: #9fb1c0;
+	/* width: 60px; */
+	border-radius: 50%;
+	padding: 17px 10px;
+	color: #fff;
+}
+.tenants.front_page_module .user_gender.female{
+	background: url(img/bg_female.png) no-repeat;
+	padding-left: 20px;
+	display: inline-block;
+	background-position: 0 5px;
+}
+.tenants.front_page_module .user_gender.male{
+	background: url(img/bg_male.png) no-repeat;
+	padding-left: 20px;
+	display: inline-block;
+	background-position: 0 5px;
+}
+.tenants.front_page_module .user_location, .tenants.front_page_module .room_intro{
+	color: #46321f;
+	font-weight: 200;
+}
+.tenants.front_page_module .user_about,
+.intro_suffix{
+	color: #999999;
+	font-weight: 200;
+	font-size: 12px;
+}
+.tenants.front_page_module .user_type img{
+	width: auto !important;
+	height: auto !important;
+}
+.tenants.front_page_module .user_role.inline_block.free{
+	color: #789fbb;
+	font-weight: 700;
+}
+.tenants.front_page_module .user_type,
+.tenants.front_page_module .user_accomodation,
+.tenants.front_page_module .user_job{
+	color: #999999;
+	font-weight: 700;
+}
+.user_job img{
+	padding-right: 3px;
+}
+.user_job span{
+	position: relative;
+  top: 3px;
+}
+.user_name,
+.gender-birth,
+.user_location,
+.user_job,
+.user_about{
+	padding-top: 3px;
+}
+.user_about{
+	padding-bottom: 10px;
+}
+
+.inline_block span{
+	position: relative;
+  top: 1px;	
+}
+.inline_block{
+	display: inline-block;
+	padding-right: 10px;
+}
+.inline_block img{
+	padding-right:3px;
+}
+#more-results{
+	text-align: center;
+	border-top: 1px solid #dee5d8;
+	padding-top: 25px;
+}
+#more-results p{
+	text-align: center;
+	color: #f18f00;
+	font-family: 'Open Sans';
+	font-weight: 600;
+	padding: 9px;
+	border: 1px solid #f18f00;
+	display: inline-block;
+	cursor: pointer;
+}
+#more-results p span{
+	background: url(img/more.gif) no-repeat;
+	display: inline-block;
+	width: 22px;
+	height: 17px;
+	padding-right:30px;
+	position:relative;
+	top:3px;
+	display: none;
+}
+.user_picture{
+	width: 175px;
+	height: 175px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	border: 10px solid #9fb1c0;
+}
+.user_role.free{
+	background: url(img/bg-free.png) no-repeat;
+	padding-left: 20px;
+}
+.room_picture img{
+	width: 270px;
+	height: auto !important;
+}
+.users_row_wrap,
+.property_row_wrap{
+	clear: both;
+	float: left;
+	width: 100%;
+}
+.send_message a{
+	color: #fff;
+	font-weight: 700;
+	font-size: 14px;
+	padding: 6px;
+	background: #789fbb;
+	-webkit-transition: all 0.5s ease; /* Safari */
+	transition:  all 0.5s ease;	
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	margin-left: -61px;	
+}
+.send_message a:hover{
+	background: #005c6f;
+	color: #fff;
+	text-decoration: none;
+}
+.administrator{
+	background: url(img/bg-admin-status.png) no-repeat;
+	display: inline-block;
+	padding-left: 25px;
+	background-position: 0 50%;
+}
+.room_owner_role.facilities{
+	color: #6f95b1;
+}
+.room_owner_role.facilities span{ 
+	display: inline-block;
+	padding-left: 2px;
+	padding-right: 13px;
+}
+.room_owner_role{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+#block-sharethis-sharethis-block h2.block-title{
+	color: #46321f;
+	font-weight: 200;
+	font-size: 14px;
+	text-align: center;
+	padding-top: 42px;
+	margin-top: 0;
+}

@@ -1,0 +1,230 @@
+#edit-filter .collapse, #edit-filter  .fade{
+	display: block;
+	opacity: 1;
+}
+.privatemsg-list-participants .user-picture img{
+	width: 20px;
+	height: auto;
+	border-radius: 50%;
+}
+.form-item.form-item-operation.form-type-select.form-group,
+#privatemsg-list button[value="Delete"]{
+	text-indent: -9999px;
+	background: url(../img/bg-close.png) no-repeat;
+	border: none;
+	height: 15px;
+	width: 15px;
+	padding-right: 0;	
+	margin-left: 7px !important;
+}
+#privatemsg-list button[value="Delete"]{
+	position: absolute;
+	top: 18px;
+	left: 7px;
+}
+table.privatemsg-list tr{
+	position: relative;
+}
+table.privatemsg-list tr a{
+	color: #466369;
+}
+.privatemsg-list-participants .user-picture img{
+	position: absolute;
+	left: 80px;
+}
+.table-striped > tbody > tr:nth-of-type(odd){
+	background: #f6f9fa;
+}
+.table > tbody > tr > td,.table > thead > tr > th{
+	border-top: 0;
+	border-bottom: 0;
+}
+table.privatemsg-list th a, table.privatemsg-list th{
+	color: #454b4c;
+}
+.table > thead > tr > th.active{
+	position: relative;
+	background: none;
+}
+.table > thead > tr > th.active a.active img{
+	position: absolute;
+	right: 20px;
+	top: 15px;	
+}
+table.privatemsg-list .select-all input[type="checkbox"]{
+	display: none;
+}
+.checkbox label input:before {
+		content: " ";
+    width: 15px !important;
+    height: 15px !important;
+		display: block !important;
+		opacity: 1 !important;
+    display: block;
+    background: url("../img/bg-check-pm.png") no-repeat;
+		margin-top: -5px;
+}
+
+.checkbox label input:checked:before {
+		content: " ";
+    width: 24px !important;
+    height: 24px !important;
+		display: block !important;
+		opacity: 1 !important;
+    background: url("../img/bg-check-pm-checked.png") no-repeat;
+}
+table.privatemsg-list tr td label.control-label{
+	position: relative;
+	top: 6px;
+}
+.table-striped > tbody > tr:nth-of-type(odd) td{
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.table-striped > tbody > tr:nth-of-type(odd) td .user-name{
+	position:relative;
+	top: 1px;	
+}
+.table-striped > tbody > tr:nth-of-type(odd) td.privatemsg-list-participants .user-name a,
+.table-striped > tbody > tr:nth-of-type(odd) td.privatemsg-list-date{
+	position:relative;
+	top: 2px;
+}
+.table-striped > tbody > tr:nth-of-type(odd) td label.control-label{
+	position: relative;
+	top: 6px;
+}
+.privatemsg-list-participants img{
+	margin-top:2px;
+}
+.privatemsg-list-participants,.privatemsg-header-subject,.privatemsg-list-subject,
+.privatemsg-header-participants, .privatemsg-header-lastupdated, .privatemsg-list-date
+{
+	border-left: 1px solid #cddbe0;
+}
+.table-responsive
+{
+	padding: 4px;
+	border: 1px solid #cddbe0;
+}
+table.privatemsg-list{
+	margin-bottom: 0;
+}
+.privatemsg-filter-actions button[type="submit"],
+.privatemsg-filter-actions button[type="submit"]:active{
+	background: url(../img/bg-search-but.png) no-repeat center;
+	text-indent: -9999px;
+	border: none;
+	margin-top: 7px;
+}
+#edit-filter{
+	position: relative;
+}
+#edit-filter .privatemsg-filter-actions{
+	position: absolute;
+	top: 15px;
+	right: -10px;
+}
+.page-messages ul.action-links{
+	float: left;
+}
+#edit-filter{
+	width: 60%;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+.page-messages ul.action-links .btn-success{
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-right: 20px;
+	background: #c87700 url(../img/bg-send-message.png) no-repeat 10px;
+}
+.page-messages ul.action-links ul.action-links{
+	margin: 0;
+	margin-top: 3px;
+}
+#edit-filter input
+{
+	padding-left: 10px;
+	padding-top: 27px;
+	padding-bottom: 26px;
+	border-radius: 0;
+	border: 1px solid #d3dee5;
+	height: 40px !important;
+	min-width: inherit;		
+	border: none !important;
+}
+#edit-filter .form-item.form-item-search{
+	background: url(../img/bg-search-input.png) repeat-x;
+	background-position: 0;
+	margin-bottom: 0;
+}
+#edit-filter .form-item.form-item-search:after {
+	content: " ";
+	background: url(../img/bg-search-after.png) no-repeat;
+	position: absolute;
+	right: -30px;
+	padding-left: 30px;
+	padding-top: 60px;
+	top: 15px;
+	right: -28px;
+}
+#edit-filter .panel-body{
+	padding-bottom: 0;
+}
+#edit-filter input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: #005c6f;
+	font-size: 18px;
+	font-family: 'Open Sans';
+	font-weight: 600;
+	font-size: 18px;
+}
+#edit-filter input::-moz-placeholder { /* Firefox 19+ */
+	color: #005c6f;
+	font-size: 18px;
+	font-family: 'Open Sans';
+	font-weight: 600;
+	font-size: 18px;
+}
+#edit-filter input:-ms-input-placeholder { /* IE 10+ */
+	color: #005c6f;
+	font-size: 18px;
+	font-family: 'Open Sans';
+	font-weight: 600;
+	font-size: 18px;
+}
+#edit-filter input:-moz-placeholder { /* Firefox 18- */
+	color: #005c6f;
+	font-size: 18px;
+	font-family: 'Open Sans';
+	font-weight: 600;
+	font-size: 18px;
+}
+.page-messages .region.region-content,
+.page-messages ul.action-links ul.action-links{
+	padding-top: 20px;
+}
+#privatemsg-list .table-responsive{
+	margin-top: 45px;
+}
+#privatemsg-list-form{
+	position: relative;
+}
+.privatemsg-author-avatar .user-picture img{
+	border-radius: 50%;
+}
+#edit-filter #edit-reset{
+	display: none;
+}
+#edit-new .input-group{
+	margin: 0;
+}
+#edit-new{
+	text-align: center;
+}
+#edit-new button[type='submit']{
+	margin-top: 40px;
+}
+#edit-new .input-group-addon{
+	display: none;
+}

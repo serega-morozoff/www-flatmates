@@ -1,0 +1,11 @@
+name = Private Message Block
+description = Provides blocks related to Privatemsg module.
+core = 7.x
+dependencies[] = privatemsg
+
+; Information added by Drupal.org packaging script on 2016-04-03
+version = "7.x-1.2"
+core = "7.x"
+project = "privatemsg_block"
+datestamp = "1459646344"
+
