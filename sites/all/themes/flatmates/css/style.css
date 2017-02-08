@@ -1456,6 +1456,7 @@ fieldset#edit-token{
 #my-rooms .panels-flexible-region-last.room_detail{
 	float: right;
 	text-align: left;
+    width: 100%;
 }
 #my-rooms .view-display-id-get_room_features img{
 	display: inline;
